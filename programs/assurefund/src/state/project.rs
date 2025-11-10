@@ -8,8 +8,8 @@ pub struct Project{
     pub project_authority : Pubkey,
     #[max_len(32)]
     pub project_id: String,
-    pub amount_requred: u16,
-    pub amount_collect: u16,
+    pub target_amount: u16,
+    pub collected_amount: u16,
     pub project_state: ProjectState,
     pub bump: u8
 }
@@ -17,6 +17,7 @@ pub struct Project{
 #[derive(Clone, InitSpace, AnchorSerialize, AnchorDeserialize)]
 pub enum ProjectState{
     Funding,
+    Development,
     Failed, 
     Completed
 }
