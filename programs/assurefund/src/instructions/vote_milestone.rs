@@ -21,7 +21,7 @@ pub fn vote_milestone(ctx: Context<VoteMilestone>, args: VoteMilestoneArgs) {
 }
 
 #[derive(Accounts)]
-pub struct VoteMilestone<'info> {
+pub struct VoteMilestone<'info> {   
     #[account(mut)]
     pub vote_authority: Signer<'info>,
 

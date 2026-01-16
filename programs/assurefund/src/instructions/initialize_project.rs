@@ -5,7 +5,7 @@ use crate::{errors::AssureFundError, state::project::*};
 pub fn initialize_project(
     ctx: Context<InitializeProject>,
     project_id: String,
-    target_amount: u16,
+    target_amount: u64,
 ) -> Result<()> {
     let project = &mut ctx.accounts.project;
 

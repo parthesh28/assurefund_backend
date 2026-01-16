@@ -10,4 +10,10 @@ pub enum AssureFundError {
 
      #[msg("Fund amount cannot be zero.")]
     ZeroFund,
+
+    #[msg("Project is not accepting funds")]
+    ProjectNotFunding,
+
+    #[msg("Numerical overflow")]
+    Overflow,
 }
