@@ -15,14 +15,14 @@ pub fn fund_project(ctx: Context<FundProject>, args: FundProjectArgs) -> Result<
 
     require!(args.fund_amount > 0, AssureFundError::ZeroFund);
 
-    let cpi_ctx = CpiContext::new(
+    let cpi_ctx = CpiContext::new(  
         ctx.accounts.system_program.to_account_info(),
         anchor_lang::system_program::Transfer {
             from: ctx.accounts.fund_authority.to_account_info(),
             to: ctx.accounts.project_vault.to_account_info(),
         },
     );
-
+ 
     anchor_lang::system_program::transfer(cpi_ctx, args.fund_amount)?;
 
     if fund.amount == 0 {

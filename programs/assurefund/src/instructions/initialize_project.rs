@@ -6,6 +6,7 @@ pub fn initialize_project(
     ctx: Context<InitializeProject>,
     project_id: String,
     target_amount: u64,
+    deadline: i64,
 ) -> Result<()> {
     let project = &mut ctx.accounts.project;
 
@@ -17,6 +18,7 @@ pub fn initialize_project(
         target_amount: target_amount,
         collected_amount: 0,
         project_state: ProjectState::Funding,
+        project_deadline: deadline,
         bump: ctx.bumps.project,
     });
 
